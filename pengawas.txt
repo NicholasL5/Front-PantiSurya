@@ -1,0 +1,9 @@
+"Ketua", "Pnt. Josua A.P. Poli", "GKI Diponegoro"
+"Sekretaris", "Pnt. Harry Tanudjaja", "GKI Ngagel"
+"Anggota", "Pnt. K. Setiawan Pudjianto", "GKI Emaus"
+"", "Pnt. Ibu Ika Lianawati", "GKI Sulung"
+"", "Pnt. Ali Nugroho", "GKI Residen Sudirman"
+
+------------------------------------------------------
+Aturan Penulisan:
+"Jabatan", "Nama", "Gereja"

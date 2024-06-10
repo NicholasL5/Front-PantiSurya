@@ -1,0 +1,11 @@
+"Anggota", "Ibu Ratnasari Budiarto", "GKI Residen Sudirman"
+"Anggota", "Ibu Lanita Halim", "GKI Sulung"
+"Anggota", "Pnt. Bp. Fadjar H. Simatupang", "GKI Diponegoro"
+"Anggota", "Ibu Endang Buda Setyowati", "GKI Sulung"
+"Anggota", "Ibu Widjajanti", "GKI Ngagel"
+"Anggota", "Bp. Susilo Rahardjo", "GKI Emaus"
+"Anggota", "Ibu Maria H. Pratomo", "GKI Emaus"
+
+------------------------------------------------------
+Aturan Penulisan:
+"Jabatan", "Nama", "Gereja"
