@@ -1,3 +1,15 @@
+<?php
+include 'utils.php';
+
+$db = new myDB();
+$id = $_GET["id"];
+// echo $id;
+$newsItems = $db->getBeritaById($id);
+$newsItems = $newsItems->fetch(PDO::FETCH_ASSOC);
+// echo $newsItems["title"];
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -60,8 +72,8 @@
 	                      <ul id="main-nav" class="menuzord-menu">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="news.html">News</a></li>
+                            <li><a href="gallery.php">Gallery</a></li>
+                            <li><a href="news.php">News</a></li>
                             <li><a href="contact.html">Contact</a></li>
                           </ul>
                         </nav>
@@ -118,18 +130,17 @@
                       <div class="post-thumb thumb"><img class="img-fullwidth" src="images/bg/bg1.jpg" alt /></div>
                     </div>
                     <div class="entry-content">
-                      <h5>Libortis sollicitudin</h5>
+                      <h5><?php echo $newsItems["title"]?></h5>
                       <p>
-                        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud
-                        solution. User generated content in real-time will have multiple touchpoints for offshoring natoque sem morbi hac nunc ultricies.
+                        <?php echo $newsItems["description"]?>
                       </p>
-                      <h5>Tincidunt wisi euismod iaculis nunc vita</h5>
+                      <!-- <h5>Tincidunt wisi euismod iaculis nunc vita</h5>
                       <p>
                         Nostra dapibus varius et semper semper rutrum ad risus felis eros. Cursus libero viverra tempus netus diam vestibulum lorem tincidunt congue porta. Non ligula egestas commodo massa. Lorem non sit vivamus convallis elit mollis.
                         Viverra sodales feugiat natoque sem morbi hac nunc ultricies nibh netus facilisis blandit. Felis purus et iaculis. Semper orci duis montes curabitur potenti a varius quis diam, vel litora et? Quis ridiculus pharetra luctus
                         augue duis.
-                      </p>
-                      <blockquote class="tm-sc tm-sc-blockquote blockquote-style3 quote-icon-theme-colored mb-20 mt-20">
+                      </p> -->
+                      <!-- <blockquote class="tm-sc tm-sc-blockquote blockquote-style3 quote-icon-theme-colored mb-20 mt-20">
                         <p>
                           Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud
                           solution.
@@ -149,7 +160,7 @@
                         Aliquam natoque lorem. Id augue porta placerat. Primis a pretium est faucibus nam cubilia eros risus. Laoreet porta et malesuada! Lacus nulla bibendum cubilia taciti mauris cubilia leo quis purus. Laoreet rutrum vel phasellus
                         nec amet scelerisque nisl mollis. Interdum id faucibus eros sodales tellus taciti molestie ut. Nec mus vehicula lectus, dapibus dictumst pulvinar venenatis gravida? Torquent suscipit varius sollicitudin facilisis torquent
                         turpis fermentum laoreet nisl tellus faucibus quam!
-                      </p>
+                      </p> -->
                     </div>
                   </article>
                 </div>

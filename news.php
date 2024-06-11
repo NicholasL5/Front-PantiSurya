@@ -1,3 +1,11 @@
+<?php
+include 'utils.php';
+
+$db = new myDB();
+$newsItems = $db->getAllBerita();
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <!-- Mirrored from html.kodesolution.com/2020/senior-html/demo/news-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Mar 2024 07:22:44 GMT -->
@@ -63,8 +71,8 @@
                           <ul id="main-nav" class="menuzord-menu">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li class="active"><a href="news.html">News</a></li>
+                            <li><a href="gallery.php">Gallery</a></li>
+                            <li class="active"><a href="news.php">News</a></li>
                             <li><a href="contact.html">Contact</a></li>
                           </ul>
                         </nav>
@@ -115,7 +123,48 @@
           <div class="container">
             <div class="section-content">
               <div class="row">
-                <div class="col-md-6 col-lg-6 col-xl-4">
+              <?php foreach ($newsItems as $news): ?>
+                                <?php
+                                    $date = date("d", strtotime($news['date']));
+                                    $month = date("M", strtotime($news['date']));
+                                    $title = htmlspecialchars($news['title']);
+                                    $description = htmlspecialchars($news['description']);
+                                    $imagePath = htmlspecialchars($news['image_path']);
+                                    $imagePath = str_replace('../Front-PantiSurya/', '', $imagePath);
+                                    $link = 'news-details.php?id=' . $news['id']; 
+                                ?>
+                                <div class="col-md-6 col-lg-6 col-xl-4" style="margin-top: 20px;">
+                                    <div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
+                                        <article class="post type-post status-publish format-standard has-post-thumbnail news">
+                                            <div class="date"><?= $date ?> <br /><?= $month ?></div>
+                                            <div class="entry-header">
+                                                <div class="post-thumb lightgallery-lightbox">
+                                                    <div class="post-thumb-inner">
+                                                        <div class="thumb">
+                                                            <img src="<?= $imagePath ?>" alt="Image" />
+                                                            <!-- <img src="images/blog/1.jpg" alt="Image" /> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="entry-content">
+                                                <h5 class="entry-title">
+                                                    <a href="<?= $link ?>" rel="bookmark"><?= $title ?></a>
+                                                </h5>
+                                                <ul class="entry-meta list-inline"></ul>
+                                                <div class="post-excerpt">
+                                                    <div class="mascot-post-excerpt"><?= implode(' ', array_slice(str_word_count($description, 1), 0, 10)) . (str_word_count($description) > 10 ? '...' : '') ?></div>
+                                                </div>
+                                                <div class="post-btn-readmore">
+                                                    <a href="<?= $link ?>" class="btn btn-outline-theme-colored1 btn-round">Read More</a>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                <!-- <div class="col-md-6 col-lg-6 col-xl-4">
                   <div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
                     <article class="post type-post status-publish format-standard has-post-thumbnail news">
                       <div class="date">20 <br />Jun</div>
@@ -201,7 +250,7 @@
                       </div>
                     </article>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

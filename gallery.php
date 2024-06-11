@@ -1,3 +1,22 @@
+<?php
+include 'utils.php';
+
+$db = new myDB();
+$images = $db->getGambar();
+// echo $images;
+$path_pictures = [];
+
+// Loop through the result and extract the path_picture values
+foreach ($images as $item) {
+    $path_pictures[] = $item['path_picture'];
+}
+
+$counter = 1;
+
+// var_dump($path_pictures);
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -60,7 +79,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li class="active"><a href="gallery.html">Gallery</a></li>
-                            <li><a href="news.html">News</a></li>
+                            <li><a href="news.php">News</a></li>
                             <li><a href="contact.html">Contact</a></li>
                           </ul>
                         </nav>
@@ -115,12 +134,16 @@
                   <div class="tm-sc tm-sc-gallery tm-sc-gallery-masonry gallery-style1-simple">
                     <div class="isotope-layout masonry grid-3 gutter lightgallery-lightbox clearfix">
                       <div class="isotope-item isotope-item-sizer"></div>
-
-                      <div class="isotope-item wide helping home water">
+                      <?php foreach ($path_pictures as $image): ?>
+                        <?php
+                          $imagePath = str_replace('../../Front-PantiSurya/', '', $image);
+                          // echo $imagePath;
+                        ?>
+                        <div class="isotope-item wide helping home water">
                         <div class="tm-gallery box-hover-effect">
                           <div class="effect-wrapper">
                             <div class="thumb">
-                              <img src="images/gallery/foto1.jpg" alt />
+                            <img src="<?= $imagePath ?>" alt="Image" />
                               <div class="d-none">
                                 <a href="#"></a>
                                 <a href="#"></a>
@@ -133,7 +156,7 @@
                             <div class="icons-holder icons-holder-middle">
                               <div class="icons-holder-inner">
                                 <div class="styled-icons icon-dark icon-circled icon-theme-colored1">
-                                  <a class="lightgallery-trigger styled-icons-item" href="images/gallery/foto1.jpg" title="Gallery 1" data-exthumbimage="images/gallery/foto1.jpg" data-src="images/gallery/foto1.jpg">
+                                  <a class="lightgallery-trigger styled-icons-item" href="<?= $imagePath ?>" title="Gallery <?= $counter ?>" data-exthumbimage="<?= $imagePath ?>" data-src="<?= $imagePath ?>">
                                     <i class="fa fa-picture-o"></i>
                                   </a>
                                 </div>
@@ -142,12 +165,40 @@
                           </div>
                         </div>
                       </div>
+                      <?php $counter++; 
+                      endforeach; ?>
 
-                      <div class="isotope-item forest water">
+                      <!-- <div class="isotope-item wide helping home water">
                         <div class="tm-gallery box-hover-effect">
                           <div class="effect-wrapper">
                             <div class="thumb">
-                              <img src="images/gallery/foto2.jpg" alt />
+                              <img src="images/gallery/foto1.jpg" alt />
+                              <div class="d-none">
+                                <a href="#"></a>
+                                <a href="#"></a>
+                              </div>
+                            </div>
+                            <div class="overlay-shade shade-theme-colored2"></div>
+                            <div class="text-holder text-holder-bottom-left">
+                            </div>
+                            <div class="icons-holder icons-holder-middle">
+                              <div class="icons-holder-inner">
+                                <div class="styled-icons icon-dark icon-circled icon-theme-colored1">
+                                  <a class="lightgallery-trigger styled-icons-item" href="images/gallery/foto1.jpg" title="Gallery 1" data-exthumbimage="images/gallery/foto1.jpg" data-src="images/gallery/foto1.jpg">
+                                    <i class="fa fa-picture-o"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+
+                      <!-- <div class="isotope-item forest water">
+                        <div class="tm-gallery box-hover-effect">
+                          <div class="effect-wrapper">
+                            <div class="thumb">
+                              <img src="images/gallery/6668177b8c7c9.jpg" alt />
                               <div class="d-none"></div>
                             </div>
                             <div class="overlay-shade shade-theme-colored1"></div>
@@ -157,7 +208,7 @@
                             <div class="icons-holder icons-holder-middle">
                               <div class="icons-holder-inner">
                                 <div class="styled-icons icon-dark icon-circled icon-theme-colored2">
-                                  <a class="lightgallery-trigger styled-icons-item" href="images/gallery/foto2.jpg" title="Gallery 2" data-exthumbimage="images/gallery/foto2.jpg" data-src="images/gallery/foto2.jpg">
+                                  <a class="lightgallery-trigger styled-icons-item" href="images/gallery/6668177b8c7c9.jpg" title="Gallery 2" data-exthumbimage="images/gallery/foto2.jpg" data-src="images/gallery/foto2.jpg">
                                     <i class="fa fa-picture-o"></i>
                                   </a>
                                 </div>
@@ -267,7 +318,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
