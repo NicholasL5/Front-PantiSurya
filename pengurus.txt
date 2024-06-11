@@ -1,0 +1,11 @@
+"Ketua Umum", "Pnt. Bp. P. Bambang Santoso", "GKI Residen Sudirman"
+"Ketua I", "Pnt. Ibu Rosany Juniati(Bu Conny)", "GKI Sulung"
+"Ketua II", "Ibu Imawati Odang", "GKI Ngagel"
+"Sekretaris Umum", "Bp. Yahya Djuanda", "GKI Diponegoro"
+"Sekretaris", "Ibu Anggraini Wibisono", "GKI Diponegoro"
+"Bendahara Umum", "Pnt. Ibu Ruth Metha Pangestu", "GKI Emaus"
+"Bendahara", "Ibu Amelia", "GKI Ngagel"
+
+------------------------------------------------------
+Aturan Penulisan:
+"Jabatan", "Nama", "Gereja"

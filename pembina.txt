@@ -1,0 +1,5 @@
+"Ketua Umum", "Pnt. Bp, Rachmat Tengadi", "GKI Diponegoro"
+"Sekretaris", "Pdt. Wahyu Pramudya", "GKI Ngagel"
+"Anggota", "Pdt. Nathanael Channing, M.Div.", "GKI Sulung"
+"", "Pdt. Setyahadi", "GKI Emaus"
+"", "Pnt. Suryadinata", "GKI Residen Sudirman"
