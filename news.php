@@ -61,7 +61,7 @@ $newsItems = $db->getAllBerita();
                   <div class="col">
                     <div class="row header-nav-col-row">
                       <div class="col-sm-auto align-self-center">
-                        <a class="menuzord-brand site-brand" href="index.html">
+                        <a class="menuzord-brand site-brand" href="index.php">
                           <img class="logo-default logo-1x" src="images/logo-wide.png" alt="Logo" />
                           <img class="logo-default logo-2x retina" src="images/logo-wide%402x.png" alt="Logo" />
                         </a>
@@ -69,7 +69,7 @@ $newsItems = $db->getAllBerita();
                       <div class="col-sm-auto ml-auto pr-0 align-self-center">
                         <nav id="top-primary-nav" class="menuzord green" data-effect="fade" data-animation="none" data-align="right">
                           <ul id="main-nav" class="menuzord-menu">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="gallery.php">Gallery</a></li>
                             <li class="active"><a href="news.php">News</a></li>
@@ -140,7 +140,7 @@ $newsItems = $db->getAllBerita();
                             <div class="entry-header">
                                 <div class="post-thumb lightgallery-lightbox">
                                     <div class="post-thumb-inner">
-                                        <div class="thumb">
+                                        <div class="thumb" style="align-items: center; justify-content: center;">
                                             <img src="<?= $imagePath ?>" alt="Image" />
                                             <!-- <img src="images/blog/1.jpg" alt="Image" /> -->
                                         </div>
